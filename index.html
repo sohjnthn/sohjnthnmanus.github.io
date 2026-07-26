@@ -249,6 +249,20 @@
             margin-top: 10px;
         }
 
+        #audioPlaylistToggle {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            background: #667eea;
+            color: white;
+        }
+
+        #audioPlaylistToggle:hover {
+            background: #2a5298;
+        }
+
         .media-caption {
             font-size: 0.9em;
             color: #666;
@@ -622,8 +636,12 @@
 
                 <div class="audio-player-box">
                     <strong>Background Audio Guide</strong>
-                    <p>Narrated tips (auto-plays next track on completion, click anywhere on the page to start):</p>
-                    <audio id="audioPlayer" controls></audio>
+                    <p>Narrated tips — plays one track at a time, then automatically advances to the next.</p>
+                    <div style="display:flex; align-items:center; gap:10px; margin-top:8px;">
+                        <button type="button" id="audioPlaylistToggle" onclick="togglePlaylist()">▶ Play Guide Audio</button>
+                        <span id="audioNowPlaying" style="font-size:0.9em; color:#555;">Not playing</span>
+                    </div>
+                    <audio id="audioPlayer" controls preload="none"></audio>
                 </div>
             </div>
             
@@ -933,7 +951,7 @@
             });
         });
 
-        // --- Background audio playlist (from reference site) ---
+        // --- Background audio playlist (sequential, one track at a time) ---
         const tracks = [
             "MapleStorySEA Unfunded Bishop Gameplay Tips - Mandarin.mp3",
             "MapleStorySEA Bishop unfunded gameplay tips - English.mp3",
@@ -942,28 +960,46 @@
         ];
 
         let currentTrack = 0;
+        let playlistActive = false;
         const player = document.getElementById("audioPlayer");
+        const nowPlayingLabel = document.getElementById("audioNowPlaying");
+        const playlistToggleBtn = document.getElementById("audioPlaylistToggle");
 
+        // Guarantees any previous playback is fully stopped before a new track starts,
+        // so tracks can never overlap.
         function playTrack(index) {
+            player.pause();
+            player.currentTime = 0;
             player.src = tracks[index];
+            nowPlayingLabel.textContent = "Now playing: " + tracks[index];
             player.play().catch(err => {
-                console.log("Audio play blocked by browser guidelines until active user click:", err);
+                console.log("Audio play blocked until user interacts with the page:", err);
             });
         }
 
         player.addEventListener("ended", () => {
-            currentTrack++;
-            if (currentTrack >= tracks.length) {
-                currentTrack = 0;
-            }
+            if (!playlistActive) return;
+            currentTrack = (currentTrack + 1) % tracks.length;
             playTrack(currentTrack);
         });
 
-        document.addEventListener("click", () => {
-            if (player && !player.src) {
-                playTrack(currentTrack);
+        function togglePlaylist() {
+            if (playlistActive) {
+                playlistActive = false;
+                player.pause();
+                nowPlayingLabel.textContent = "Paused";
+                playlistToggleBtn.textContent = "▶ Play Guide Audio";
+            } else {
+                playlistActive = true;
+                playlistToggleBtn.textContent = "⏸ Pause";
+                if (!player.src) {
+                    playTrack(currentTrack);
+                } else {
+                    player.play().catch(err => console.log("Audio play blocked:", err));
+                    nowPlayingLabel.textContent = "Now playing: " + tracks[currentTrack];
+                }
             }
-        }, { once: true });
+        }
 
         // --- Search bar + chatbot knowledge base ---
         const tipsDatabase = [
