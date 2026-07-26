@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MapleStorySEA Unfunded Player Tips</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-bottom: 2px solid #e9ecef;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        nav button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        nav button:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        nav button.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #2a5298;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .tier-box {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .tier-box strong {
+            color: #667eea;
+        }
+        
+        .system-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .system-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .system-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .key-strategy {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            nav {
+                flex-direction: column;
+            }
+            
+            nav button {
+                width: 100%;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MapleStorySEA Unfunded Player Tips</h1>
+            <p>Progress without Cash Shop purchases • Mesos-only gameplay</p>
+        </header>
+        
+        <nav>
+            <button class="nav-btn active" data-section="overview">Overview</button>
+            <button class="nav-btn" data-section="mesos">Mesos Earning</button>
+            <button class="nav-btn" data-section="progression">Gear Progression</button>
+            <button class="nav-btn" data-section="bossing">Bossing Guide</button>
+            <button class="nav-btn" data-section="strategies">Key Strategies</button>
+        </nav>
+        
+        <div class="content">
+            <!-- Overview Section -->
+            <div id="overview" class="section active">
+                <h2>Welcome to Unfunded Gameplay</h2>
+                <p>Learn how to progress in MapleStorySEA without using Cash Shop purchases. This guide focuses on Mesos-only gameplay tailored specifically for unfunded players.</p>
+                
+                <h3>Quick Start</h3>
+                <p>Reaching level 11 for both Authentic Symbols (Cernium and Arcs) should provide enough clean damage range to defeat:</p>
+                <ul class="system-list">
+                    <li>Normal Papulatus</li>
+                    <li>Normal Arkarium</li>
+                    <li>Normal Magnus</li>
+                    <li>Hard Von Leon</li>
+                    <li>Normal Pink Bean</li>
+                    <li>Normal Kawoong</li>
+                    <li>Hard Hilla</li>
+                    <li>Normal Cygnus</li>
+                </ul>
+                
+                <h3>Core Philosophy</h3>
+                <p><strong>"Steady beats fast"</strong> — Consistent daily routines and reliable farming methods outperform any shortcut. Regular farming, consistent extraction, and checking market prices will outperform risky tactics.</p>
+            </div>
+            
+            <!-- Mesos Earning Section -->
+            <div id="mesos" class="section">
+                <h2>Mesos Earning Methods (Non-@Cash)</h2>
+                
+                <h3>Primary Systems</h3>
+                
+                <div class="tier-box">
+                    <strong>Ardentmill Extraction</strong><br>
+                    Extract unused equipment via Alchemy to get item crystals. These crystals have value in the Maple Auction.
+                </div>
+                
+                <div class="tier-box">
+                    <strong>Daily Bossing</strong><br>
+                    Defeat daily bosses to collect Glowing Soul Crystals. Sell these directly to the NPC Collector in Ardentmill for steady Mesos.
+                </div>
+                
+                <div class="tier-box">
+                    <strong>Maple Auction</strong><br>
+                    Sell item crystals and leftover materials for steady Mesos. Check market prices before listing to maximize profit.
+                </div>
+                
+                <h3>Recommended Routine</h3>
+                <ol class="system-list">
+                    <li>Train on level-appropriate maps with stable mob density</li>
+                    <li>Extract all unused equipment via Ardentmill</li>
+                    <li>Complete daily bosses for Glowing Soul Crystals</li>
+                    <li>Sell materials and crystals on Maple Auction</li>
+                    <li>Repeat consistently for reliable income</li>
+                </ol>
+            </div>
+            
+            <!-- Gear Progression Section -->
+            <div id="progression" class="section">
+                <h2>Gear Progression Path</h2>
+                
+                <h3>Account-Wide Layers (Essential)</h3>
+                <div class="tier-box">
+                    <strong>Maple Union</strong><br>
+                    Free system that boosts all characters on your account. Essential for damage range.
+                </div>
+                
+                <div class="tier-box">
+                    <strong>Link Skills</strong><br>
+                    Permanent account-wide buffs from different characters. These compound with all other upgrades.
+                </div>
+                
+                <h3>Main Character Equipment</h3>
+                
+                <table>
+                    <tr>
+                        <th>Stage</th>
+                        <th>Equipment</th>
+                        <th>Level</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Early</strong></td>
+                        <td>Fensalir equipment from drops</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mid-Term</strong></td>
+                        <td>Root Abyss (Top & Bottom)</td>
+                        <td>150</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mid-Term</strong></td>
+                        <td>Arcaneshade (Hat, Shoes, Gloves, Cape, Shoulder)</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Long-Term</strong></td>
+                        <td>Gradual Mesos-funded upgrades</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+                
+                <h3>Accessory Sets (Permanent Content)</h3>
+                <p>Use permanent content accessory sets for early damage boosts:</p>
+                <ul class="system-list">
+                    <li>Level 140 Sengoku Era 2 3-Accessory Set</li>
+                </ul>
+                
+                <h3>Enhancement Methods</h3>
+                <ul class="system-list">
+                    <li>Soul Enchanter for equipment enhancement</li>
+                    <li>Boss Soul Pieces (Shards) for additional stats</li>
+                    <li>Resetting Inner Ability for optimal lines</li>
+                </ul>
+            </div>
+            
+            <!-- Bossing Guide Section -->
+            <div id="bossing" class="section">
+                <h2>Bossing Guide by Damage Range</h2>
+                <p>Progress through bosses as your damage range increases. Prioritize routine completion over chasing difficulty before your damage is ready.</p>
+                
+                <h3>Tier 1: Entry Level</h3>
+                <div class="tier-box">
+                    <strong>Damage Range:</strong> 0.6m – 1.0m clean damage<br>
+                    <strong>Boss:</strong> Normal Zakum<br>
+                    <strong>Reward:</strong> 19.5m Mesos
+                </div>
+                
+                <h3>Tier 2: Early Expedition</h3>
+                <div class="tier-box">
+                    <strong>Damage Range:</strong> 2.0m+ clean damage<br>
+                    <strong>Bosses:</strong> Normal Hilla, Normal Ranmaru, Normal Horntail<br>
+                    <strong>Reward:</strong> 19.5m Mesos
+                </div>
+                
+                <h3>Tier 3: Pre-6th Job</h3>
+                <div class="tier-box">
+                    <strong>Damage Range:</strong> 19.5m+ clean damage<br>
+                    <strong>Bosses:</strong> Normal Von Bon, Normal Pierre, Normal Crimson Queen, Normal Vellum<br>
+                    <strong>Reward:</strong> 19.5m Mesos
+                </div>
+                
+                <h3>Tier 4: Weekly Roster (Post-6th Job)</h3>
+                <div class="tier-box">
+                    <strong>Damage Range:</strong> 19.5m+ with full 5th/6th job rotation<br>
+                    <strong>Key Bosses:</strong> Hard Von Leon, Normal Arkarium, Normal Papulatus, Chaos Horntail, Pink Bean variants, Magnus, and more<br>
+                    <strong>Strategy:</strong> Lead each fight with your highest total-damage opener. Save Ascent for survival situations.
+                </div>
+            </div>
+            
+            <!-- Key Strategies Section -->
+            <div id="strategies" class="section">
+                <h2>Key Strategies for Success</h2>
+                
+                <div class="key-strategy">
+                    <strong>Steady Beats Fast</strong><br>
+                    Consistent daily routines outperform shortcuts. Regular farming, consistent extraction, and checking market prices will build wealth faster than risky tactics.
+                </div>
+                
+                <div class="key-strategy">
+                    <strong>Focus on Clean Damage Range</strong><br>
+                    Your clean damage range determines which bosses you can defeat. Prioritize reaching the next damage threshold before attempting harder bosses.
+                </div>
+                
+                <div class="key-strategy">
+                    <strong>Permanent Content is Your Friend</strong><br>
+                    Use permanent content accessory sets (such as Sengoku) for early damage boosts. These are always available and don't expire.
+                </div>
+                
+                <div class="key-strategy">
+                    <strong>Authentic Symbols Matter</strong><br>
+                    Focus on leveling Authentic Symbols for Cernium and Arcs to level 11. This provides significant clean damage range boost.
+                </div>
+                
+                <div class="key-strategy">
+                    <strong>Account-Wide Systems Compound</strong><br>
+                    Maple Union and Link Skills strengthen every character on your account. They're free, permanent, and compound with everything else.
+                </div>
+                
+                <div class="key-strategy">
+                    <strong>Lower-Tier Bosses Still Pay Out</strong><br>
+                    Don't skip lower-tier bosses. They provide reliable Mesos and help build your routine. Consistency matters more than difficulty.
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>MapleStorySEA Unfunded Player Tips | Compiled from community guides | Updated 2026</p>
+            <p>This guide focuses on Mesos-only gameplay without Cash Shop purchases.</p>
+        </footer>
+    </div>
+    
+    <script>
+        document.querySelectorAll('.nav-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons and sections
+                document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding section
+                this.classList.add('active');
+                const sectionId = this.getAttribute('data-section');
+                document.getElementById(sectionId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
