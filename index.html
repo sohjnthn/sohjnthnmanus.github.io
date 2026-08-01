@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MapleStorySEA Unfunded Player Tips</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-bottom: 2px solid #e9ecef;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        nav button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        nav button:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        nav button.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #2a5298;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .tier-box {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .tier-box strong {
+            color: #667eea;
+        }
+        
+        .system-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .system-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .system-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .key-strategy {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* --- Media styles (images, video, slides, audio) --- */
+        .images-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .images-section img {
+            max-width: 220px;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .media-container {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        video, .media-container iframe {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 8px;
+        }
+
+        .video-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .video-row video {
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .youtube-videos-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .youtube-videos-wrapper iframe {
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        @media (min-width: 769px) {
+            .media-container {
+                max-width: 800px;
+            }
+        }
+
+        .audio-player-box {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .audio-player-box audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        #audioPlaylistToggle {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            background: #667eea;
+            color: white;
+        }
+
+        #audioPlaylistToggle:hover {
+            background: #2a5298;
+        }
+
+        .media-caption {
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+            margin-top: -8px;
+            margin-bottom: 15px;
+        }
+
+        /* --- Search bar --- */
+        .search-container {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .search-container input {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .search-container button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            background: #667eea;
+            color: white;
+        }
+
+        .search-container button:hover {
+            background: #2a5298;
+        }
+
+        #searchResults {
+            margin-bottom: 20px;
+        }
+
+        .search-result-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .search-result-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .search-result-images img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* --- Fixed (in-page) chatbot --- */
+        .chatbot-container {
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .chatbot-header {
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+            background: #f0f4ff;
+            color: #2a5298;
+        }
+
+        .chat-messages {
+            min-height: 300px;
+            max-height: 420px;
+            overflow-y: auto;
+            padding: 15px;
+            background: #f7f7f7;
+        }
+
+        .bot-message,
+        .user-message {
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            max-width: 85%;
+            line-height: 1.5;
+            overflow-wrap: anywhere;
+        }
+
+        .bot-message {
+            background: #e6f0ff;
+        }
+
+        .user-message {
+            background: #d9ffe0;
+            margin-left: auto;
+        }
+
+        .bot-message img {
+            max-width: 120px;
+            margin-top: 8px;
+            margin-right: 5px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .chat-input-area {
+            display: flex;
+            gap: 10px;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+            background: #ffffff;
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .chat-input-area button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            background: #667eea;
+            color: white;
+        }
+
+        .chat-input-area button:hover {
+            background: #2a5298;
+        }
+
+        /* --- Floating persistent chatbot --- */
+        .floating-chat-toggle {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            z-index: 9999;
+            border: none;
+            transition: transform 0.2s ease;
+        }
+
+        .floating-chat-toggle:hover {
+            transform: scale(1.05);
+            background: #2a5298;
+        }
+
+        .floating-chat-box {
+            position: fixed;
+            bottom: 95px;
+            right: 25px;
+            width: 360px;
+            max-width: calc(100vw - 50px);
+            height: 480px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            z-index: 9998;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+        }
+
+        .floating-chat-box.active {
+            display: flex;
+        }
+
+        .floating-chat-header {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .floating-chat-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .floating-chat-messages {
+            flex: 1 1 auto;
+            max-height: calc(100% - 110px);
+            overflow-y: auto;
+            padding: 15px;
+            background: #f7f7f7;
+        }
+
+        .floating-chat-messages img {
+            max-width: 100px;
+            margin-top: 8px;
+            margin-right: 5px;
+            border-radius: 6px;
+        }
+
+        .floating-chat-box .chat-input-area {
+            flex-shrink: 0;
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            .chat-messages {
+                min-height: 220px;
+            }
+
+            .search-container, .chat-input-area {
+                flex-direction: column;
+            }
+
+            .search-result-images img,
+            .bot-message img {
+                max-width: 90px;
+            }
+
+            .floating-chat-box {
+                width: 310px;
+                height: 420px;
+                bottom: 85px;
+                right: 15px;
+            }
+
+            .floating-chat-toggle {
+                bottom: 15px;
+                right: 15px;
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            nav {
+                flex-direction: column;
+            }
+            
+            nav button {
+                width: 100%;
+                text-align: left;
+            }
+
+            .images-section img {
+                max-width: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="floating-chat-toggle" id="floatingChatToggle" onclick="toggleFloatingChat()">💬</button>
+
+    <div class="floating-chat-box" id="floatingChatBox">
+        <div class="floating-chat-header">
+            <span>Tips Assistant (Floating View)</span>
+            <button class="floating-chat-close" onclick="toggleFloatingChat()">✕</button>
+        </div>
+        <div id="floatingChatMessages" class="floating-chat-messages">
+            <div class="bot-message">
+                Hello! Ask me about Mesos farming, progression, Maple Union, defeating expedition boss monsters, equipment for the main character, link skills, and more.
+            </div>
+        </div>
+        <form class="chat-input-area" onsubmit="event.preventDefault(); sendFloatingMessage();">
+            <input type="text" id="floatingChatInput" placeholder="Ask a question..." autocomplete="off"/>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>MapleStorySEA Unfunded Player Tips</h1>
+            <p>Progress without Cash Shop purchases • Mesos-only gameplay</p>
+        </header>
+        
+        <nav>
+            <button class="nav-btn active" data-section="overview">Overview</button>
+            <button class="nav-btn" data-section="mesos">Mesos Earning</button>
+            <button class="nav-btn" data-section="progression">Gear Progression</button>
+            <button class="nav-btn" data-section="bossing">Bossing Guide</button>
+            <button class="nav-btn" data-section="strategies">Key Strategies</button>
+        </nav>
+        
+        <div class="content">
+            <!-- Overview Section -->
+            <div id="overview" class="section active">
+                <h2>Welcome to Unfunded Gameplay</h2>
+                <p>Learn how to progress in MapleStorySEA without using Cash Shop purchases. This guide focuses on Mesos-only gameplay tailored specifically for unfunded players.</p>
+
+                <div class="images-section">
+                    <img src="1000014911.jpg" alt="MapleStorySEA unfunded player tips overview">
+                </div>
+                <p class="media-caption">Overview reference image</p>
+
+                <h3>Quick Start</h3>
+                <p>Reaching level 11 for both Authentic Symbols (Cernium and Arcs) should provide enough clean damage range to defeat:</p>
+                <ul class="system-list">
+                    <li>Normal Papulatus</li>
+                    <li>Normal Arkarium</li>
+                    <li>Normal Magnus</li>
+                    <li>Hard Von Leon</li>
+                    <li>Normal Pink Bean</li>
+                    <li>Normal Kawoong</li>
+                    <li>Hard Hilla</li>
+                    <li>Normal Cygnus</li>
+                </ul>
+
+                <h3>Gameplay Showcase</h3>
+                <p>A look at Bishop gameplay in action — Crest of the Solar against Normal Zakum in Dead Mine, and Holy Advent into Angel Ray VI against Normal Pink Bean in the Time Temple.</p>
+                <div class="video-row">
+                    <video controls muted loop playsinline width="280" height="184">
+                        <source src="animate-this-10-panel-storyboard-cinematic-sequenc.mp4" type="video/mp4">
+                    </video>
+                    <video controls muted loop playsinline width="180" height="320">
+                        <source src="The other video.mp4" type="video/mp4">
+                    </video>
+                    <video controls muted loop playsinline width="180" height="320">
+                        <source src="Bishop_casting_holy_attack_202607120951.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <h3>Guide Overview Presentation</h3>
+                <div style="display: flex; justify-content: center; margin-bottom: 20px; width: 100%;">
+                    <div class="media-container">
+                        <iframe src="https://docs.google.com/presentation/d/1QCfXAMhfIsWvuLECFaB7nThwHHu8jhoQ0zySfVBuBrg/embed?start=true&loop=true&delayms=5000" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <p class="media-caption">10-slide presentation: MapleStorySEA Bishop gameplay tips</p>
+                
+                <h3>Core Philosophy</h3>
+                <p><strong>"Steady beats fast"</strong> — Consistent daily routines and reliable farming methods outperform any shortcut. Regular farming, consistent extraction, and checking market prices will outperform risky tactics.</p>
+
+                <div class="audio-player-box">
+                    <strong>Background Audio Guide</strong>
+                    <p>Narrated tips — plays one track at a time, then automatically advances to the next.</p>
+                    <div style="display:flex; align-items:center; gap:10px; margin-top:8px;">
+                        <button type="button" id="audioPlaylistToggle" onclick="togglePlaylist()">▶ Play Guide Audio</button>
+                        <span id="audioNowPlaying" style="font-size:0.9em; color:#555;">Not playing</span>
+                    </div>
+                    <audio id="audioPlayer" controls preload="none"></audio>
+                </div>
+            </div>
+            
+            <!-- Mesos Earning Section -->
+            <div id="mesos" class="section">
+                <h2>Mesos Earning Methods (Non-@Cash)</h2>
+                
+                <h3>Primary Systems</h3>
+                
+                <div class="tier-box">
+                    <strong>Ardentmill Extraction</strong><br>
+                    Extract unused equipment via Alchemy to get item crystals. These crystals have value in the Maple Auction.
+                </div>
+                
+                <div class="tier-box">
+                    <strong>Daily Bossing</strong><br>
+                    Defeat daily bosses to collect Glowing Soul Crystals. Sell these directly to the NPC Collector in Ardentmill for steady Mesos.
+                </div>
+                
+                <div class="tier-box">
+                    <strong>Maple Auction</strong><br>
+                    Sell item crystals and leftover materials for steady Mesos. Check market prices before listing to maximize profit.
+                </div>
+
+                <div class="images-section">
+                    <img src="received_735084553007492.jpeg" alt="Early Mesos farming reference">
+                    <img src="alchemy_extraction.jpg" alt="Ardentmill Alchemy extraction">
+                    <img src="boss_mileage.jpg" alt="Boss mileage and Glowing Soul Crystals">
+                    <img src="Maple_140626_155808.jpg" alt="Mesos farming routine screenshot">
+                </div>
+                
+                <h3>Recommended Routine</h3>
+                <ol class="system-list">
+                    <li>Train on level-appropriate maps with stable mob density</li>
+                    <li>Extract all unused equipment via Ardentmill</li>
+                    <li>Complete daily bosses for Glowing Soul Crystals</li>
+                    <li>Sell materials and crystals on Maple Auction</li>
+                    <li>Repeat consistently for reliable income</li>
+                </ol>
+
+                <h3>Search the Tips</h3>
+                <form class="search-container" onsubmit="event.preventDefault(); searchTips('mesos');">
+                    <input type="text" id="searchInput-mesos" placeholder="Search MapleStorySEA tips..." />
+                    <button type="submit">Search</button>
+                </form>
+                <div id="searchResults-mesos"></div>
+
+                <h3>Tips Assistant</h3>
+                <div class="chatbot-container">
+                    <div class="chatbot-header">
+                        MapleStorySEA Tips Assistant
+                    </div>
+                    <div id="chatMessages-mesos" class="chat-messages">
+                        <div class="bot-message">
+                            Hello! Ask me about Mesos farming, progression, Maple Union, defeating expedition boss monsters, equipment for the main character, link skills, and more.
+                        </div>
+                    </div>
+                    <form class="chat-input-area" onsubmit="event.preventDefault(); sendMessage('mesos');">
+                        <input type="text" id="chatInput-mesos" placeholder="Ask a question..." />
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Gear Progression Section -->
+            <div id="progression" class="section">
+                <h2>Gear Progression Path</h2>
+                
+                <h3>Account-Wide Layers (Essential)</h3>
+                <div class="tier-box">
+                    <strong>Maple Union</strong><br>
+                    Free system that boosts all characters on your account. Essential for damage range.
+                </div>
+                
+                <div class="tier-box">
+                    <strong>Link Skills</strong><br>
+                    Permanent account-wide buffs from different characters. These compound with all other upgrades.
+                </div>
+                
+                <h3>Main Character Equipment</h3>
+                
+                <table>
+                    <tr>
+                        <th>Stage</th>
+                        <th>Equipment</th>
+                        <th>Level</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Early</strong></td>
+                        <td>Fensalir equipment from drops</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mid-Term</strong></td>
+                        <td>Root Abyss (Top & Bottom)</td>
+                        <td>150</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mid-Term</strong></td>
+                        <td>Arcaneshade (Hat, Shoes, Gloves, Cape, Shoulder)</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Long-Term</strong></td>
+                        <td>Gradual Mesos-funded upgrades</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+
+                <div class="images-section">
+                    <img src="FB_IMG_1771654388149.jpg" alt="Gear progression reference 1">
+                    <img src="FB_IMG_1771654392720.jpg" alt="Gear progression reference 2">
+                    <img src="FB_IMG_1773890578891.jpg" alt="Gear progression reference 3">
+                    <img src="FB_IMG_1773890584328.jpg" alt="Gear progression reference 4">
+                </div>
+                
+                <h3>Accessory Sets (Permanent Content)</h3>
+                <p>Use permanent content accessory sets for early damage boosts:</p>
+                <ul class="system-list">
+                    <li>Level 140 Sengoku Era 2 3-Accessory Set</li>
+                </ul>
+                
+                <h3>Enhancement Methods</h3>
+                <ul class="system-list">
+                    <li>Soul Enchanter for equipment enhancement</li>
+                    <li>Boss Soul Pieces (Shards) for additional stats</li>
+                    <li>Resetting Inner Ability for optimal lines</li>
+                </ul>
+
+                <h3>Search the Tips</h3>
+                <form class="search-container" onsubmit="event.preventDefault(); searchTips('progression');">
+                    <input type="text" id="searchInput-progression" placeholder="Search MapleStorySEA tips..." />
+                    <button type="submit">Search</button>
+                </form>
+                <div id="searchResults-progression"></div>
+
+                <h3>Tips Assistant</h3>
+                <div class="chatbot-container">
+                    <div class="chatbot-header">
+                        MapleStorySEA Tips Assistant
+                    </div>
+                    <div id="chatMessages-progression" class="chat-messages">
+                        <div class="bot-message">
+                            Hello! Ask me about Mesos farming, progression, Maple Union, defeating expedition boss monsters, equipment for the main character, link skills, and more.
+                        </div>
+                    </div>
+                    <form class="chat-input-area" onsubmit="event.preventDefault(); sendMessage('progression');">
+                        <input type="text" id="chatInput-progression" placeholder="Ask a question..." />
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Bossing Guide Section -->
+            <div id="bossing" class="section">
+                <h2>Bossing Guide by Damage Range</h2>
+                <p>Progress through bosses as your damage range increases. Prioritize routine completion over chasing difficulty before your damage is ready.</p>
+                
+                <h3>Tier 1: Entry Level</h3>
+                <div class="tier-box">
+                    <strong>Damage Range:</strong> 0.6m – 1.0m clean damage<br>
+                    <strong>Boss:</strong> Normal Zakum<br>
+                </div>
+                
+                <h3>Tier 2: Early Expedition</h3>
+                <div class="tier-box">
+                    <strong>Damage Range:</strong> 2.0m+ lower clean damage<br>
+                    <strong>Bosses:</strong> Normal Hilla, Normal Ranmaru, Normal Horntail<br>
+                </div>
+                
+                <h3>Tier 3: Pre-6th Job</h3>
+                <div class="tier-box">
+                    <strong>Damage Range:</strong> 19.5m+ lower clean damage<br>
+                    <strong>Bosses:</strong> Normal Vellum/Crimson Queen/Pierre/Von Bon<br>
+                </div>
+                
+                <h3>Tier 4: Weekly/Daily Roster (Post-6th Job)</h3>
+                <div class="tier-box">
+                    <strong>Damage Range:</strong> 19.5m+ lower clean damage range with full 5th/6th job rotation<br>
+                    <strong>Key Bosses:</strong> Hard/Normal Von Leon, Normal/Easy Arkarium, Chaos Horntail, Normal Kawoong, Hard Ranmaru, Chaos/Normal Papulatus, Chaos/Normal Pink Bean, Hard/Normal Magnus, Normal/Easy Cygnus, Hard Hilla, Chaos Vellum/Crimson Queen/Pierre/Von Bon, Normal Princess Nou, and Normal Akechi Mitsuhide<br>
+                    <strong>Strategy:</strong> Lead each fight with your highest total-damage opener. Save Ascent for survival situations.
+                </div>
+
+                <div class="images-section">
+                    <img src="FB_IMG_1775036218395.jpg" alt="Bossing reference 1">
+                    <img src="Maple_100526_140123.jpg" alt="Bossing reference 2">
+                    <img src="Maple_110526_005124.jpg" alt="Bossing reference 3">
+                    <img src="FB_IMG_1778924688621.jpg" alt="Bossing reference 4">
+                    <img src="FB_IMG_1777005553625.jpg" alt="Bossing reference 5 - Bishop survivability">
+                </div>
+
+                <h3>Search the Tips</h3>
+                <form class="search-container" onsubmit="event.preventDefault(); searchTips('bossing');">
+                    <input type="text" id="searchInput-bossing" placeholder="Search MapleStorySEA tips..." />
+                    <button type="submit">Search</button>
+                </form>
+                <div id="searchResults-bossing"></div>
+
+                <h3>Tips Assistant</h3>
+                <div class="chatbot-container">
+                    <div class="chatbot-header">
+                        MapleStorySEA Tips Assistant
+                    </div>
+                    <div id="chatMessages-bossing" class="chat-messages">
+                        <div class="bot-message">
+                            Hello! Ask me about Mesos farming, progression, Maple Union, defeating expedition boss monsters, equipment for the main character, link skills, and more.
+                        </div>
+                    </div>
+                    <form class="chat-input-area" onsubmit="event.preventDefault(); sendMessage('bossing');">
+                        <input type="text" id="chatInput-bossing" placeholder="Ask a question..." />
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Key Strategies Section -->
+            <div id="strategies" class="section">
+                <h2>Key Strategies for Success</h2>
+                
+                <div class="key-strategy">
+                    <strong>Steady Beats Fast</strong><br>
+                    Consistent daily routines outperform shortcuts. Regular farming, consistent extraction, and checking market prices will build wealth faster than risky tactics.
+                </div>
+                
+                <div class="key-strategy">
+                    <strong>Focus on Clean Damage Range</strong><br>
+                    Your clean damage range determines which bosses you can defeat. Prioritize reaching the next damage threshold before attempting harder bosses.
+                </div>
+                
+                <div class="key-strategy">
+                    <strong>Permanent Content is Your Friend</strong><br>
+                    Use permanent content accessory sets (such as Sengoku) for early damage boosts. These are always available and don't expire.
+                </div>
+                
+                <div class="key-strategy">
+                    <strong>Authentic Symbols Matter</strong><br>
+                    Focus on leveling Authentic Symbols for Cernium and Arcs to level 11. This provides significant clean damage range boost.
+                </div>
+                
+                <div class="key-strategy">
+                    <strong>Account-Wide Systems Compound</strong><br>
+                    Maple Union and Link Skills strengthen every character on your account. They're free, permanent, and compound with everything else.
+                </div>
+                
+                <div class="key-strategy">
+                    <strong>Lower-Tier Bosses Still Pay Out</strong><br>
+                    Don't skip lower-tier bosses. They provide reliable Mesos and help build your routine. Consistency matters more than difficulty.
+                </div>
+
+                <h3>Bishop Survivability Explained</h3>
+                <div style="display: flex; justify-content: center; margin-bottom: 20px; width: 100%;">
+                    <div class="media-container">
+                        <iframe src="https://docs.google.com/presentation/d/1deCx-I97o9iNeya-Ut6YFsbf74-1Py7SN-h1yQJBN-g/embed?start=true&loop=true&delayms=5000" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <p class="media-caption">5-slide presentation: why Bishop can survive monster attacks better than other jobs</p>
+
+                <h3>Video Guides</h3>
+                <div class="youtube-videos-wrapper">
+                    <iframe width="280" height="158" src="https://www.youtube.com/embed/wZiIDkbclDU" title="MapleStorySEA guide video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="280" height="158" src="https://www.youtube.com/embed/oRqOKkCFuK4" title="MapleStorySEA guide video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="280" height="158" src="https://www.youtube.com/embed/2vl-uhVJIZ4" title="MapleStorySEA guide video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <h3>Search the Tips</h3>
+                <form class="search-container" onsubmit="event.preventDefault(); searchTips('strategies');">
+                    <input type="text" id="searchInput-strategies" placeholder="Search MapleStorySEA tips..." />
+                    <button type="submit">Search</button>
+                </form>
+                <div id="searchResults-strategies"></div>
+
+                <h3>Tips Assistant</h3>
+                <div class="chatbot-container">
+                    <div class="chatbot-header">
+                        MapleStorySEA Tips Assistant
+                    </div>
+                    <div id="chatMessages-strategies" class="chat-messages">
+                        <div class="bot-message">
+                            Hello! Ask me about Mesos farming, progression, Maple Union, defeating expedition boss monsters, equipment for the main character, link skills, and more.
+                        </div>
+                    </div>
+                    <form class="chat-input-area" onsubmit="event.preventDefault(); sendMessage('strategies');">
+                        <input type="text" id="chatInput-strategies" placeholder="Ask a question..." />
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>MapleStorySEA Unfunded Player Tips | Compiled from community guides | Updated 2026</p>
+            <p>This guide focuses on Mesos-only gameplay without Cash Shop purchases.</p>
+        </footer>
+    </div>
+    
+    <script>
+        document.querySelectorAll('.nav-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons and sections
+                document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding section
+                this.classList.add('active');
+                const sectionId = this.getAttribute('data-section');
+                document.getElementById(sectionId).classList.add('active');
+            });
+        });
+
+        // --- Background audio playlist (sequential, one track at a time) ---
+        const tracks = [
+            "MapleStorySEA Unfunded Bishop Gameplay Tips - Mandarin.mp3",
+            "MapleStorySEA Bishop unfunded gameplay tips - English.mp3",
+            "圣光射线.mp3",
+            "Cernium Glow.mp3"
+        ];
+
+        let currentTrack = 0;
+        let playlistActive = false;
+        const player = document.getElementById("audioPlayer");
+        const nowPlayingLabel = document.getElementById("audioNowPlaying");
+        const playlistToggleBtn = document.getElementById("audioPlaylistToggle");
+
+        // Guarantees any previous playback is fully stopped before a new track starts,
+        // so tracks can never overlap.
+        function playTrack(index) {
+            player.pause();
+            player.currentTime = 0;
+            player.src = tracks[index];
+            nowPlayingLabel.textContent = "Now playing: " + tracks[index];
+            player.play().catch(err => {
+                console.log("Audio play blocked until user interacts with the page:", err);
+            });
+        }
+
+        player.addEventListener("ended", () => {
+            if (!playlistActive) return;
+            currentTrack = (currentTrack + 1) % tracks.length;
+            playTrack(currentTrack);
+        });
+
+        function togglePlaylist() {
+            if (playlistActive) {
+                playlistActive = false;
+                player.pause();
+                nowPlayingLabel.textContent = "Paused";
+                playlistToggleBtn.textContent = "▶ Play Guide Audio";
+            } else {
+                playlistActive = true;
+                playlistToggleBtn.textContent = "⏸ Pause";
+                if (!player.src) {
+                    playTrack(currentTrack);
+                } else {
+                    player.play().catch(err => console.log("Audio play blocked:", err));
+                    nowPlayingLabel.textContent = "Now playing: " + tracks[currentTrack];
+                }
+            }
+        }
+
+        // --- Search bar + chatbot knowledge base ---
+        const tipsDatabase = [
+            {
+                keywords: ["early", "meso", "mesos", "farming"],
+                answer: "Early Mesos Farming:<br><br>Focus on grinding at level range normal monster maps.<br>Sell Glowing Soul Crystals from expedition bosses to NPC Collector.<br>Sell disassembled equipment's (which can only be sold for 1 Mesos each to an NPC shop before they are disassembled) via the Maple Auction to other players for Mesos.",
+                images: ["received_735084553007492.jpeg", "alchemy_extraction.jpg", "boss_mileage.jpg", "Maple_140626_155808.jpg"]
+            },
+            {
+                keywords: ["union", "maple union", "artifact", "union artifact", "artifact crystal", "maple union artifact crystal"],
+                answer: "Maple Union:<br><br>Prioritise MATT/ATT according to your damage type.<br>Then, focus on Primary Stat, Secondary Stat, HP (about 40k buffed HP is required to tank the damage from the Mechanical Haven's Remodeled Giant Android; and Georgi), Critical Damage+%, Boss Damage+%, and Ignore DEF+%.",
+                images: ["union_strategy.jpg", "union_artifact.jpg"]
+            },
+            {
+                keywords: ["bishop"],
+                answer: "Bishop Tips:<br><br>Focus on survivability.<br>Do not use the 2nd job Heal skill as this may cause the Bishop and any other party member(s) to die, if the Bishop and/or any other party member(s) is/are affected by the Zombify abnormal status effect.",
+                images: ["FB_IMG_1777005553625.jpg"]
+            },
+            {
+                keywords: ["bossing", "boss", "expedition"],
+                answer: "Bossing Progression:<br><br>Improve Critical Damage+%, Boss Damage+%, and Ignore DEF+%, in this order.<br><br>The Ascent (which is the second 6th job attack) skill clears many non-Chaos bosses efficiently after 6th job advancement.",
+                images: ["FB_IMG_1775036218395.jpg", "Maple_100526_140123.jpg", "FB_IMG_1778924688621.jpg"]
+            },
+            {
+                keywords: ["link skills", "link", "links"],
+                answer: "Essential Link Skills:<br><br>Kanna, Ark, Illium, Explorer Magicians, Hayato, Demon Avenger, Knights of Cygnus (excluding Mihile), Adele, Xenon, Khali, Lara, and Explorer Pirates.",
+                images: ["Maple_210626_171336.jpg"]
+            },
+            {
+                keywords: ["gear", "equipment"],
+                answer: "Efficient Gear Progression:<br><br>Progress equipment using naturally obtained gear and boss drops.<br><br>Early: Fensalir equipment<br>Mid: Arcaneshade and Root Abyss<br>Long-term: Gradual damage range improvements with the related event items for untradable equipment; and the Daily Gift's Choice Cubes and Choice Additional Cubes for tradable equipment.",
+                images: ["FB_IMG_1771654388149.jpg", "FB_IMG_1771654392720.jpg", "FB_IMG_1773890578891.jpg", "FB_IMG_1773890584328.jpg"]
+            },
+            {
+                keywords: ["main", "character", "main character", "unfunded", "progression", "unfunded progression", "unfunded main character progression"],
+                answer: "Only for the main character, purchase the following cheapest, clean (non-spell trace/star force/normal potential/additional potential-enhanced, but can have additional stats in blue text:<br><br>1. lv200 Arcaneshade hat, shoes, gloves, cape, and shoulder decoration<br><br>2. lv150 Root Abyss top and bottom<br><br>Enhance the untradable equipment with the following event items:<br><br>1. The scroll which provides Unique (Normal) Potential to untradable equipment with a 100% passing chance<br><br>2. The scroll which provides 20 or less stars to untradable equipment up to lv160 with a 100% passing chance<br><br>3. Karma Black Resurrection Flames<br><br>4. Karma Choice Cubes<br><br>5. Karma Choice Additional Cubes<br><br>Any remaining Untradable equipment can use the following items from the Daily Gift:<br><br>1. Choice Cubes<br><br>2. Choice Additional Cubes",
+                images: ["received_735084553007492.jpeg"]
+            },
+            {
+                keywords: ["guild"],
+                answer: "Create your own guild if you have not done so, preferably with the main character as the guild leader.<br><br>The non-main characters for the same server, for the same MapleSEA game account.",
+                images: ["FB_IMG_1780753665903.jpg", "FB_IMG_1780753736858.jpg", "FB_IMG_1780753739152.jpg", "FB_IMG_1780753741785.jpg", "FB_IMG_1780753744983.jpg", "FB_IMG_1780753747675.jpg", "FB_IMG_1780753750513.jpg", "FB_IMG_1780753755049.jpg", "FB_IMG_1780753757893.jpg", "FB_IMG_1780753760531.jpg", "FB_IMG_1780753763525.jpg"]
+            }
+        ];
+
+        function searchTips(sectionId) {
+            const input = document.getElementById("searchInput-" + sectionId).value.toLowerCase().trim();
+            const results = document.getElementById("searchResults-" + sectionId);
+            results.innerHTML = "";
+            let found = false;
+
+            if (input === "") return;
+
+            tipsDatabase.forEach(item => {
+                for (let i = 0; i < item.keywords.length; i++) {
+                    if (input.includes(item.keywords[i])) {
+                        let imageHTML = "";
+                        if (item.images && item.images.length > 0) {
+                            imageHTML = '<div class="search-result-images">' +
+                                item.images.map(img => `<img src="${img}" alt="Related Image">`).join("") +
+                                '</div>';
+                        }
+                        results.innerHTML += `<div class="search-result-card">${item.answer}${imageHTML}</div>`;
+                        found = true;
+                        break;
+                    }
+                }
+            });
+
+            if (!found) {
+                results.innerHTML = `<div class="search-result-card">No matching tips found.<br><br>Try searching for:<br>mesos<br>union<br>bossing<br>bishop<br>gear<br>link skills</div>`;
+            }
+        }
+
+        function findBotReply(message) {
+            let botReply = "I could not find a matching answer yet.";
+            let botImages = [];
+            let matchFound = false;
+
+            for (let i = 0; i < tipsDatabase.length; i++) {
+                const item = tipsDatabase[i];
+                for (let j = 0; j < item.keywords.length; j++) {
+                    if (message.toLowerCase().includes(item.keywords[j])) {
+                        botReply = item.answer;
+                        botImages = item.images || [];
+                        matchFound = true;
+                        break;
+                    }
+                }
+                if (matchFound) break;
+            }
+
+            return { botReply, botImages };
+        }
+
+        function sendMessage(sectionId) {
+            const input = document.getElementById("chatInput-" + sectionId);
+            const message = input.value.trim();
+            if (message === "") return;
+
+            const chatMessages = document.getElementById("chatMessages-" + sectionId);
+            chatMessages.innerHTML += `<div class="user-message">${message}</div>`;
+
+            const { botReply, botImages } = findBotReply(message);
+
+            let imageHTML = "";
+            if (botImages.length > 0) {
+                imageHTML = `<div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 5px;">` +
+                    botImages.map(img => `<img src="${img}" alt="Related Image">`).join("") +
+                    `</div>`;
+            }
+
+            chatMessages.innerHTML += `<div class="bot-message">${botReply}${imageHTML}</div>`;
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            input.value = "";
+        }
+
+        function toggleFloatingChat() {
+            const chatBox = document.getElementById("floatingChatBox");
+            chatBox.classList.toggle("active");
+        }
+
+        function sendFloatingMessage() {
+            const input = document.getElementById("floatingChatInput");
+            const message = input.value.trim();
+            if (message === "") return;
+
+            const chatMessages = document.getElementById("floatingChatMessages");
+            chatMessages.innerHTML += `<div class="user-message">${message}</div>`;
+
+            const { botReply, botImages } = findBotReply(message);
+
+            let imageHTML = "";
+            if (botImages.length > 0) {
+                imageHTML = `<div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 5px;">` +
+                    botImages.map(img => `<img src="${img}" alt="Related Image">`).join("") +
+                    `</div>`;
+            }
+
+            chatMessages.innerHTML += `<div class="bot-message">${botReply}${imageHTML}</div>`;
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            input.value = "";
+        }
+    </script>
+</body>
+</html>
