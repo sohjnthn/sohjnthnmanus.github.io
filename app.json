@@ -4,7 +4,7 @@
     "slug": "my-manus-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/FB_IMG_1785846587835.png",
     "scheme": "mymanusapp",
     "userInterfaceStyle": "light",
     "jsEngine": "hermes",
@@ -13,7 +13,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "foregroundImage": "./assets/images/FB_IMG_1785846587835.png",
         "backgroundColor": "#E6F4FE"
       },
       "package": "com.maplestorysea.tipsapp",
@@ -22,7 +22,7 @@
       ]
     },
     "web": {
-      "favicon": "./assets/images/icon.png",
+      "favicon": "./assets/images/FB_IMG_1785846587835.png",
       "bundler": "metro"
     },
     "plugins": [
@@ -38,12 +38,14 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 76,
-          "backgroundColor": "#208AEF"
+          "image": "./assets/images/FB_IMG_1785846587835.png",
+          "resizeMode": "cover",
+          "imageWidth": 1284,
+          "backgroundColor": "#AFEEEE"
         }
       ],
-      "expo-asset"
+      "expo-asset",
+      "expo-image"
     ],
     "extra": {
       "eas": {
