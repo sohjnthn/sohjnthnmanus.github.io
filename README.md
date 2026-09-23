@@ -16,5 +16,5 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 This GitHub repository's website is 
 https://sohjnthn.github.io/sohjnthnmanus.github.io/
 
-This GitHub repository's smartphone application can be found via https://drive.google.com/file/d/1oyytVlg49VT8RT_5PTcGEcpLuwTCx2mE/view?usp=drivesdk
+This GitHub repository's Android application can be found via https://drive.google.com/file/d/1oyytVlg49VT8RT_5PTcGEcpLuwTCx2mE/view?usp=drivesdk
 
