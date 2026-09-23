@@ -10,3 +10,10 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 
    ```bash
    npm install
+
+=
+
+This GitHub repository's website is 
+
+
+This GitHub repository's smartphone application can be found via
