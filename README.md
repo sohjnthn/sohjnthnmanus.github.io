@@ -13,6 +13,9 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 
 =
 
+
+As generated with Manus AI for the initial index.html; and the initial App.tsx files.
+
 This GitHub repository's website is 
 https://sohjnthn.github.io/sohjnthnmanus.github.io/
 
